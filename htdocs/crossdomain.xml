@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+	
+	<!-- 
+		specs at http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html
+		for a good overview see http://www.senocular.com/pub/adobe/crossdomain/policyfiles.html 
+	-->
+	
+	<!-- only this policy file will be accepted on this server -->
+	<site-control permitted-cross-domain-policies="master-only"/>
+	
+	<!-- allow data access from www.company.com and only www.company.com (different subdomains / no www. = deny) -->
+	<allow-access-from domain="www.company.com" />
+	
+	<!-- allow access from company.com only (no wildcard, just domain without www.) -->
+    <!-- <allow-access-from domain="company.com" />  -->
+	
+	<!-- allow access from all subdomains of company.com -->
+	<!-- <allow-access-from domain="*.company.com" /> -->
+	
+	<!-- open access from any domain -->
+	<!-- <allow-access-from domain="*" /> -->
+	
+	<!-- not advised: access https from swf served via http -->
+	<!-- <allow-access-from domain="www.company.com" secure="false" /> -->
+	
+	<!-- 
+		would allow to push data (headers) 
+		e.g. a SOAPAction header is also allowed to be sent with requests made to this domain from any domain
+	-->
+	<!-- <allow-http-request-headers-from domain="*" headers="SOAPAction"/> -->
+  	
+</cross-domain-policy>

@@ -1,0 +1,23 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  FEINHEIT
+  
+  Konzept:
+  
+  Grafik:
+  
+  Programmierung:
+  
+  
+  Location: Zürich
+
+/* THANKS */
+  Names (& URL): 
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software:

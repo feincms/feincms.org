@@ -1,0 +1,6 @@
+div#footer {
+    position: relative !important;
+}
+div.navigation {
+    -webkit-text-size-adjust: 90%;
+}

@@ -1,0 +1,534 @@
+/*------------------------------------------------------------------
+basic tags moved to boilerplate.css
+
+Alle Elemente innerhalb .container müssen ein vielfaches von 18 in der Höhe sein!
+http://www.garethjmsaunders.co.uk/blueprint/
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+layout
+-------------------------------------------------------------------*/
+/*
+font-family:'BookmanOldStyleW01-Bold 691970'; Bold
+font-family:'BookmanOldStyleW01-Bold 691973'; Bold Italic
+font-family:'BookmanOldStyleW01-Ital'; Italic
+font-family:'Bookman Old Style W01'; Regular
+font-family:'FuturaW01-HeavyOblique';
+*/
+
+body {
+    font-family: 'Bookman Old Style W01';
+    font-size: 0.9em;
+}
+
+header, #header {
+    height: 110px;
+    position: relative;
+}
+
+#logo {
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#navigation {
+    float: right;
+    font-size: 15px;
+    text-align: right;
+    position: absolute;
+    bottom: 18px;
+    right: 0px;
+}
+
+#sidebar {
+    position: relative;
+    float: right;
+    top: -120px;
+}
+
+footer, #footer {
+    position: relative;
+}
+
+/*------------------------------------------------------------------
+basic styling
+-------------------------------------------------------------------*/
+h1 {
+    color: #72b038;
+    font-family: 'FuturaW01-HeavyOblique';
+    font-size: 25px;
+    font-style: normal;
+    margin: 20px 0 5px 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #3b3b3b;
+    font-family: 'BookmanOldStyleW01-Bold 691973';
+    font-size: 15px;
+    margin: 10px 0 0 0;
+}
+
+#home-box-container1 h2, #home-box-container2 h2, #home-box-container3 h2 {
+    color: #72b038;
+    font-family: 'FuturaW01-HeavyOblique';
+}
+
+a.button {
+    background: url(/media/img/design/button-arrow-down.png) #003325 no-repeat right;
+    color: #72b038;
+    display: block;
+    float: right;
+    font-family: 'BookmanOldStyleW01-Bold 691973';
+    margin: 20px 0 0 0;
+    padding: 10px 70px 10px 10px;
+    text-decoration: none;
+    text-transform: lowercase;
+    -mox-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+a.button-next {
+    background: url(/media/img/design/button-arrow-next.png) no-repeat;
+    display: block;
+    float: left;
+    height: 55px;
+    width: 53px;
+    z-index: 1000;
+}
+
+a.button-previous {
+    background: url(/media/img/design/button-arrow-previous.png) no-repeat;
+    display: block;
+    float: left;
+    height: 55px;
+    width: 53px;
+}
+
+/*------------------------------------------------------------------
+navigation
+-------------------------------------------------------------------*/
+#navigation {
+    color: #002b20;
+    font-size: 18px;
+    font-family: 'BookmanOldStyleW01-Bold 691970';
+    text-decoration: none;
+}
+
+#navigation a {
+    color: #002b20;
+    text-decoration: none;
+}
+
+#meta-navigation {
+    float: left;
+    font-size: 17px;
+    margin: 20px 0 0 0;
+}
+
+#meta-navigation a {
+    color: #002b20;
+    font-family: 'Bookman Old Style W01';
+    text-decoration: none;
+}
+
+#navigation a.current, #meta-navigation a.current {
+    color: #72b038;
+}
+
+/*------------------------------------------------------------------
+moodboard
+-------------------------------------------------------------------*/
+div.moodboard-wrapper {
+    background-color: #f0f0f0;
+    margin: 30px 0;
+}
+
+div.moodboard {
+    font-family: 'BookmanOldStyleW01-Ital';
+    font-size: 16px;
+}
+
+div.slides {
+    height: 420px;
+}
+
+div.slides>div.slide {
+    width: 950px;
+}
+
+img.slide-image {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 630px;
+    -mox-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+div.slide-text {
+    width: 100%;
+}
+
+/*------------------------------------------------------------------
+sidebar
+-------------------------------------------------------------------*/
+.box-dark, .box-bright {
+    color: #fff;
+    padding: 15px;
+    font-family: 'BookmanOldStyleW01-Bold 691970';
+    font-weight: normal;
+    margin: 0 0 20px 0;
+}
+
+.box-dark h2, .box-bright h2 {
+    color: #fff;
+    font-family: 'FuturaW01-HeavyOblique';
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.box-dark {
+    background-color: #55726a;
+}
+
+.box-bright {
+    background-color: #869a95;
+}
+
+/*------------------------------------------------------------------
+home
+-------------------------------------------------------------------*/
+#home-box-container1 {
+    border-right: 1px solid #e1e1e1;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 33.3%;
+}
+
+#home-box-container2 {
+    border-right: 1px solid #e1e1e1;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 33.3%;
+}
+
+#home-box-container3 {
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#home-box-left, #home-box-center, #home-box-right {
+    float: left;
+    font-weight: bold;
+    position: relative;
+}
+
+#home-box-left {
+    width: 30.3%;
+    left: 66.6%;
+}
+
+#home-box-center {
+    width: 27.3%;
+    left: 72.6%;
+}
+
+#home-box-right {
+    width: 30.3%;
+    left: 78.6%;
+}
+
+p.quote {
+    font-style: italic;
+    margin: 0 0 50px 0;
+}
+
+p.quote:before {
+    content: "\00AB";
+}
+
+p.quote:after {
+    content: "\00BB";
+}
+
+#quote-navigation {
+    margin: 140px 0 0 180px;
+}
+
+/*------------------------------------------------------------------
+footer
+-------------------------------------------------------------------*/
+footer hr {
+    background-color: #7f958f;
+    height: 5px;
+    margin: 0 0 10px 0;
+}
+
+#logo-python, #logo-django { 
+    float: right;
+}
+/*
+/*
+#moodboard {
+    height: 306px;
+    background: silver;
+    position: relative;
+}
+#wrapper {
+    padding-top: 54px;
+    background: white;
+    min-height: 400px;
+}
+header {
+    background-color: white;
+    border: 1px solid transparent;
+    display: block;
+    height: 72px;
+    /*margin-bottom: 180px;*//*
+}
+
+#footer {
+    width: 950px;
+    margin: 0 auto;
+}
+
+#sidebar {
+
+}
+#main {
+    margin-bottom: 100px;
+}
+
+/* navigation *//*
+
+nav a {
+    color: #444444;
+    text-decoration: none;
+}
+#language-navigation {
+    
+}
+
+nav a.mark, nav a:hover {
+    color: #356fd9;
+    text-decoration: none;
+}
+
+#nav-level-1 {
+    height: 36px;
+    margin-top: 36px;
+}
+.a-level-1 {
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 20px 6px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ul-level-2 {
+    font-weight: bold;
+}
+
+.li-level-2 {
+    min-height: 34px;
+    border-bottom: 1px dotted #444;
+    width: 100%;
+}
+.li-level-2.first {
+    border-top: 1px dotted #444;
+}
+.nav-level-2-link {
+    font-size: 1.5em;
+    line-height: 36px;
+}
+
+.ul-level-3 {
+    padding-bottom: 9px;
+}
+
+.li-level-3 {
+    min-height: 18px;
+}
+.ul-level-3-link {
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* footer *//*
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0; left: 0;
+    background-color: #222222;
+    height: 36px;
+}
+
+#social-icons {
+    float: left;
+}
+#meta-navigation {
+    float: right;
+
+}
+#meta-navigation a {
+    margin-left: 2em;
+}
+
+.social-icon {
+    margin: 3px 10px 8px 0;
+    display: block;
+    float: left;
+    background-image: url(/media/img/skel/social-media-icons.png);
+    width: 23px;
+    height: 25px;
+}
+
+div#social-icons.white .social-icon {
+    background-image: url(/media/img/skel/social-media-icons-white.png);    
+}
+
+.rss-icon { background-position: 0 0}
+.rss-icon:hover { background-position: 0 -24px}
+.twitter-icon { background-position: -24px 0 }
+.twitter-icon:hover { background-position: -24px -24px }
+.facebook-icon { background-position: -48px 0 }
+.facebook-icon:hover { background-position: -48px -24px }
+.youtube-icon { background-position: -72px 0 }
+.youtube-icon:hover { background-position: -72px -24px }
+.myspace-icon { background-position: -96px 0 }
+.myspace-icon:hover { background-position: -96px -24px }
+.picasa-icon { background-position: -120px 0 }
+.picasa-icon:hover { background-position: -120px -24px }
+.wordpress-icon { background-position: -144px 0 }
+.wordpress-icon:hover { background-position: -144px -24px }
+.vimeo-icon { background-position: -168px 0 }
+.vimeo-icon:hover { background-position: -168px -24px }
+.flickr-icon { background-position: -191px 0 }
+.flickr-icon:hover { background-position: -191px -24px }
+
+/*------------------------------------------------------------------
+basic styling
+-------------------------------------------------------------------*//*
+.languagelink {
+    color: #444444;
+}
+.languagelink.mark {
+    color: #356fd9;
+}
+a.button {
+    padding: 4px 10px;
+    margin: 8px 0;
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+/*------------------------------------------------------------------
+Pagination
+-------------------------------------------------------------------*//*
+.pagination-step-back {
+    background: url(../img/arrow-lt.gif) left -16px no-repeat;
+    display: block;
+    padding-left: 17px;
+}
+.pagination-step-back:hover {
+    background-position: left 4px;
+}
+.gallery-content .gallery_next {
+    text-align: right;
+}
+.pagination-step-forward a {
+    background: url(../img/arrow-rt.gif) right -16px no-repeat;
+    padding-right: 17px;
+    display: block;
+}
+.pagination-step-forward:hover {
+    background-position: right 4px;
+}
+/*------------------------------------------------------------------
+mediafile content
+-------------------------------------------------------------------*//*
+.download-box {
+    background: white;
+    border: 1px solid transparent;
+    height: 72px;
+    margin-bottom: 18px;
+}
+.download-link {
+    display: block;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.download-link-thumbnail, .download-link-icon {
+    background: white 0 0 no-repeat;
+    width: 52px; height: 62px;
+    top: 7px; left: 30px;
+    margin: 0;
+    display: block;
+}
+.download-link-icon {
+    background: url(/static/img/icons/media-file-icons-60prz.png) 0 0 no-repeat;
+}
+.download-link-caption {
+    top: 32px; left: 106px;
+    color: #444;
+    display: block;
+}
+.download-link-text {
+    color: #356fd9;
+}
+.download-link-icon.link-type-doc { background-position: 3px 0;}
+.download-link-icon.link-type-zip { background-position: -57px 0;}
+.download-link-icon.link-type-rar { background-position: -118px 0;}
+.download-link-icon.link-type-ppt { background-position: -466px 0;}
+.download-link-icon.link-type-mp3 { background-position: -351px 0;}
+.download-link-icon.link-type-xls { background-position: -408px 0;}
+.download-link-icon.link-type-txt { background-position: -525px 0;}
+.download-link-icon.link-type-pdf { background-position: -582px 0;}
+
+.image.left, .image.right {
+    padding-top: 4px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    width: 190px;
+}
+.image.right {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.image.right img {
+    float: right;
+}
+.small.caption {
+    margin-bottom: 0;
+    line-height: 1.5em;
+}
+
+/*------------------------------------------------------------------
+feinheit standard
+-------------------------------------------------------------------*//*
+*/
+#byfeinheit {
+    background:transparent url(/media/img/skel/feinheit.gif) no-repeat scroll 0 0;
+    display:block;
+    height:53px;
+    position:absolute;
+    right:0;
+    text-indent:-7777px;
+    top:0;
+    width:16px;
+}
