@@ -7,15 +7,6 @@
 [submodule "lib/feincms"]
 	path = lib/feincms
 	url = git://github.com/feincms/feincms.git
-[submodule "lib/feinheit"]
-	path = lib/feinheit
-	url = git@github.com:feinheit/feinheit.git
-[submodule "lib/django_compressor"]
-	path = lib/django_compressor
-	url = git://github.com/mintchaos/django_compressor.git
-[submodule "lib/django-rosetta"]
-	path = lib/django-rosetta
-	url = git://github.com/mbi/django-rosetta.git
 [submodule "lib/form_designer"]
 	path = lib/form_designer
 	url = git://github.com/matthiask/form_designer.git
