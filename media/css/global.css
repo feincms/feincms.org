@@ -65,15 +65,18 @@ h1 {
 }
 
 h2 {
+    color: #72b038;
+    font-family: 'FuturaW01-HeavyOblique';
+    font-size: 17px;
+    margin: 10px 0 0 0;
+    text-transform: uppercase;
+}
+
+h3 {
     color: #3b3b3b;
     font-family: 'BookmanOldStyleW01-Bold 691973';
     font-size: 15px;
-    margin: 10px 0 0 0;
-}
-
-#home-box-container1 h2, #home-box-container2 h2, #home-box-container3 h2 {
-    color: #72b038;
-    font-family: 'FuturaW01-HeavyOblique';
+    margin: 10px 0 5px 0;
 }
 
 a.button {
@@ -171,6 +174,22 @@ img.slide-image {
 
 div.slide-text {
     width: 100%;
+}
+
+article, .article {
+    margin: 0 0 15px 0;
+}
+
+article h3, .article h3 {
+    margin-left: 90px;
+}
+
+article div.text, .article div.text {
+    margin-left: 90px;
+}
+
+article img, .article img {
+    float: left;
 }
 
 /*------------------------------------------------------------------
