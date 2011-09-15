@@ -138,7 +138,10 @@ navigation
     text-decoration: none;
 }
 
-#navigation a.current, #meta-navigation a.current {
+#navigation a:hover,
+#meta-navigation a:hover,
+#navigation a.current,
+#meta-navigation a.current {
     color: #72b038;
 }
 
@@ -291,7 +294,7 @@ p.quote:after {
 }
 
 #logos {
-   position: relative; 
+   position: relative;
 }
 
 #logo-googlegroups {
@@ -323,7 +326,7 @@ footer hr {
     margin: 0 0 10px 0;
 }
 
-#logo-python, #logo-django { 
+#logo-python, #logo-django {
     float: right;
 }
 /*
@@ -365,7 +368,7 @@ nav a {
     text-decoration: none;
 }
 #language-navigation {
-    
+
 }
 
 nav a.mark, nav a:hover {
@@ -447,7 +450,7 @@ footer {
 }
 
 div#social-icons.white .social-icon {
-    background-image: url(/media/img/skel/social-media-icons-white.png);    
+    background-image: url(/media/img/skel/social-media-icons-white.png);
 }
 
 .rss-icon { background-position: 0 0}
