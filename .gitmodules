@@ -12,7 +12,7 @@
 	url = git://github.com/matthiask/form_designer.git
 [submodule "lib/django-fhadmin"]
 	path = lib/django-fhadmin
-	url = git@github.com:feinheit/django-fhadmin.git
+	url = git://github.com/feinheit/django-fhadmin.git
 [submodule "lib/feincms-oembed"]
 	path = lib/feincms-oembed
 	url = git://github.com/feincms/feincms-oembed.git
