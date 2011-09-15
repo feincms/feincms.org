@@ -1,5 +1,5 @@
 <article><div class="article clearfix">
     {% if content.mediafile %}<img src="{{ content.mediafile.file.url }}">{% endif %}
     {% if content.title %}<h3>{{ content.title }}</h3>{% endif %}
-    {% if content.text %}<div class="text">{{ content.text|safe }}</div>{% endif %}{% endif %}
+    {% if content.text %}<div class="text">{{ content.text|safe }}</div>{% endif %}
 </div></article>
