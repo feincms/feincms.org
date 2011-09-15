@@ -1,11 +1,11 @@
 <!doctype html> {% load applicationcontent_tags feincms_tags feincms_page_tags %}
-<html lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
     <meta name="keywords" content="{% block meta-keywords %}{{ feincms_page.meta_keywords }} {{ block.super }}{% endblock %}" />
     <meta name="description" content="{% block meta-description %}{% if feincms_page.meta_description %}{{ feincms_page.meta_description }}{% else %}{{ block.super }}{% endif %}{% endblock %}" />
     <meta name="robots" content="index,follow,noodp" />
-    <meta http-equiv="content-language" content="{{ LANGUAGE_CODE }}">
+    <meta http-equiv="content-language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     {% block handheldhead %}
     <meta name="viewport" content="width=device-width">
@@ -18,7 +18,7 @@
     <meta property="og:url" content="http://feincms.org{{ feincms_page.get_absolute_url }}" />
     <meta property="og:image" content="http://feincms.org/media/img/design/logo_feincms.png" />
     <!-- /required -->
-    <meta property="og:language" content="{{ LANGUAGE_CODE }}" />
+    <meta property="og:language" content="en" />
     <meta property="og:country-name" content="Switzerland" />
     {% endblock %}
 
@@ -32,18 +32,10 @@
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ MEDIA_URL }}lib/jquery/jquery-1.6.1.min.js">\x3C/script>')</script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/global.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}lib/jquery-moodboard/moodboard.js"></script>
 
-    {{ feincms_page.content.media.css }}
-
-    <script type="text/javascript">
-        var _gaq = [['_setAccount', '{{ GOOGLE_ANALYTICS }}'], ['_trackPageview']];
-        // A very simple script queue for inline scripts
-        SQ = {
-            queue: new Array(),
-            add: function(f) { if (typeof f == 'function') { this.queue.push(f); } },
-            run: function() { while(this.queue.length > 0) { f = this.queue.pop(); f(); } }
-        }
-    </script>
+    {{ feincms_page.content.media }}
 
     <title>{% block title %}{{ feincms_page.title }} - feinCMS.org{% endblock %}</title>
 
@@ -109,40 +101,10 @@
 
 <a title="FEINHEIT Grafik Zürich" id="byfeinheit" href="http://www.feinheit.ch/">FEINHEIT Grafik Zürich – CI/CD, Webdesign, Flash, Webshop, XHTML/CSS</a>
 
-{% comment %}
-<script type="text/javascript">
-   (function(d, t) {
-    var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.async = true;
-    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g, s);
-   })(document, 'script');
-</script>
-{% endcomment %}
-
-{# % feincms_frontend_editing feincms_page request % #}
-
 {% if feincms_page and request.user.is_authenticated %}
 <div id="edit-links">
     {% get_fragment request "admin-link" %}<a class="edit-link" href="/admin/page/page/{{ feincms_page.id }}/">{{ feincms_page.title }} (Edit)</a>
 </div>
 {% endif %}
-
-<script type="text/javascript" src="{{ MEDIA_URL }}js/global.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}lib/jquery-moodboard/moodboard.js"></script>
-{% block extra-js %}{% endblock %}
-{# Run delayed inline js scripts #}
-<script type="text/javascript">SQ.run()</script>
-{{ feincms_page.content.media.js }}
-  <!--[if lt IE 7 ]>
-    <script src="{{ MEDIA_URL }}lib/ie/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-  <![endif]-->
-  <!--[if IEMobile 7 ]>
-  <script src="{{ MEDIA_URL }}lib/mobile/css3-mediaqueries-min.js"></script>
-  <![endif]-->
-{% block contextadmin %}
-{% endblock %}
 </body>
 </html>

@@ -28,7 +28,6 @@ CONTACT_FORM_EMAIL = [mail for name, mail in ADMINS]
 TEMPLATE_DEBUG = DEBUG
 
 TIME_ZONE = 'Europe/Zurich'
-LANGUAGE_CODE = 'de-ch'
 SITE_ID = 1
 
 MEDIA_ROOT = os.path.join(APP_BASEDIR, 'media')
@@ -49,13 +48,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'django.core.context_processors.static',
