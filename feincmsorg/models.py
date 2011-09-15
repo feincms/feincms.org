@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib import admin
 from django.db import models
 from django.template.defaultfilters import capfirst
 from django.template.loader import render_to_string
@@ -37,6 +38,18 @@ Page.register_templates({
         ('moodboard', _('Moodboard'), 'inherited'),
         ),
     })
+
+
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ('name', 'text', 'is_active')
+
+
+class Testimonial(models.Model):
+    is_active = models.BooleanField()
+    name = models.CharField(max_length=100)
+    text = models.TextField()
+
+admin.site.register(Testimonial, TestimonialAdmin)
 
 
 class ArticleContentAdminForm(ItemEditorForm):
