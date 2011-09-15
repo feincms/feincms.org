@@ -10,7 +10,6 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    url(r'^blog/', include('elephantblog.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
 )
@@ -25,5 +24,6 @@ if 'runserver' in sys.argv:
     urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += patterns('',
+    url(r'^blog/', include('elephantblog.urls')),
     url(r'', include('feincms.urls')),
 )

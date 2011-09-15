@@ -1,9 +1,9 @@
-<!doctype html> {% load applicationcontent_tags %}
+<!doctype html> {% load applicationcontent_tags feincms_tags feincms_page_tags %}
 <html lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
-    <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
-    <meta name="description" content="{% block meta-description %}{% endblock %}" />
+    <meta name="keywords" content="{% block meta-keywords %}{{ feincms_page.meta_keywords }} {{ block.super }}{% endblock %}" />
+    <meta name="description" content="{% block meta-description %}{% if feincms_page.meta_description %}{{ feincms_page.meta_description }}{% else %}{{ block.super }}{% endif %}{% endblock %}" />
     <meta name="robots" content="index,follow,noodp" />
     <meta http-equiv="content-language" content="{{ LANGUAGE_CODE }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -45,7 +45,7 @@
         }
     </script>
 
-    <title>{% block title %}feinCMS.org{% endblock %}</title>
+    <title>{% block title %}{{ feincms_page.title }} - feinCMS.org{% endblock %}</title>
 
     {% block extra-head %}{% endblock %}
 </head>
@@ -54,21 +54,57 @@
 <div class="container">
     <header><div id="header">
         <a href="/"><img id="logo" src="{{ MEDIA_URL }}img/design/logo_feincms.png" alt="FeinCMS Logo"></a>
-        <div id="navigation">{% block navigation %}{% endblock %}</div>
+        <div id="navigation">
+            <nav>
+                <div class="span-18 clearfix">
+                    {% feincms_navigation of feincms_page as nav level=1 %}
+                    {% for p in nav %}
+                        <a {% if p|is_equal_or_parent_of:feincms_page %}class="current"{% endif %} href="{{ p.get_absolute_url }}">{{ p.title }}</a>
+                        {% if not forloop.last %}<span class="nav-separator">&nbsp;/&nbsp;</span>{% endif %}
+                    {% endfor %}
+                </div>
+            </nav>
+        </div>
     </div></header>
 </div>
 <div class="moodboard-wrapper clearfix">
     <div class="container">
-        {% block moodboard %}{% endblock %}
+        {% block moodboard %}
+            <div class="moodboard span-{% if feincms_page.content.sidebar|length = 0 %}24{% else %}15{% endif %}">
+                <h1 class="contenttitle">{% if feincms_page.content_title %}{{ feincms_page.content_title }}{% else %}{{ feincms_page.title }}{% endif %}</h1>
+                {% feincms_render_region feincms_page "moodboard" request %}
+            </div>
+        {% endblock %}
     </div>
 </div>
 <div class="container clearfix">
     <div class="main span-24 last">
-        {% block content %}{% endblock %}
+        {% block content %}
+            <div class="span-{% if feincms_page.content.sidebar|length = 0 %}24{% else %}15{% endif %}">
+                {% feincms_render_region feincms_page "main" request %}
+            </div>
+            <div id="sidebar" class="span-8 last">
+                {% for content in feincms_page.content.sidebar %}
+                <div class="{% if forloop.first %}box-dark{% else %}box-bright{% endif %}">
+                    {{ content.render }}
+                </div>
+                {% endfor %}
+            </div>
+        {% endblock %}
     </div>
 </div>
 <div class="container">
-    {% block footer %}{% endblock %}
+    <footer class="clearfix"><div id="footer">
+        <hr>
+        <nav><div id="meta-navigation">
+            {% for p in meta_navigation %}
+                <a {% if p|is_equal_or_parent_of:feincms_page %}class="current"{% endif %} href="{{ p.get_absolute_url }}" class="ajax" rel="{{ p.get_navigation_url }}">{{ p.title }}</a>
+                {% if not forloop.last %}<span class="nav-separator">&nbsp;/&nbsp;</span>{% endif %}
+            {% endfor %}
+        </div></nav>
+        <a href="http://www.djangoproject.com"><img id="logo-django" src="{{ MEDIA_URL }}img/design/logo_django.png" alt="django logo"></a>
+        <a href="http://www.python.org"><img id="logo-python" src="{{ MEDIA_URL }}img/design/logo_python.png" alt="python logo"></a>
+    </div></footer>
 </div>
 
 <a title="FEINHEIT Grafik Zürich" id="byfeinheit" href="http://www.feinheit.ch/">FEINHEIT Grafik Zürich – CI/CD, Webdesign, Flash, Webshop, XHTML/CSS</a>
