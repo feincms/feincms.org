@@ -79,7 +79,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'form_designer',
-    #'elephantblog',
+    'elephantblog',
     #'pinging',
     #'disqus',
 

@@ -16,11 +16,12 @@ from feincms.admin.item_editor import FeinCMSInline, ItemEditorForm
 from feincms_oembed.contents import OembedContent
 from form_designer.models import FormContent
 
+from elephantblog.models import Entry
+
 
 MEDIA_TYPE_CHOICES = (
     ('default', _('default')),
 )
-
 
 Page.register_templates({
     'title': 'Standard template',
@@ -77,3 +78,7 @@ Page.create_content_type(MediaFileContent, TYPE_CHOICES=MEDIA_TYPE_CHOICES)
 Page.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, regions=('main',))
 Page.create_content_type(FormContent)
 Page.create_content_type(ArticleContent)
+
+Entry.create_content_type(RichTextContent, cleanse=True)
+Entry.create_content_type(MediaFileContent, TYPE_CHOICES=MEDIA_TYPE_CHOICES)
+Entry.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, regions=('main',))
