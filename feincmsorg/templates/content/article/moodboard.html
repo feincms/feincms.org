@@ -1,7 +1,7 @@
 {% load feincms_thumbnail %}
 <div class="slide">
-    <img class="slide-image" src="{{ content.mediafile.file.name|cropscale:'630x380' }}">
-    <h1 class="slide-title">{{ content.title }}</h1>
-    <div class="slide-text">{{ content.text|safe }}</div>
-    <a class="button" href="{{ content.link }}" {% if not content.get_link_target_display = 'default' %}target="{{ content.get_link_target_display }}"{% endif %}>{{ content.link_text}}</a>
+    {% if content.mediafile %}<img class="slide-image" src="{{ content.mediafile.file.name|cropscale:'630x380' }}">{% endif %}
+    {% if content.title %}<h1 class="slide-title">{{ content.title }}</h1>{% endif %}
+    {% if content.text %}<div class="slide-text">{{ content.text|safe }}</div>{% endif %}
+    {% if content.link %}<a class="button" href="{{ content.link }}" {% if not content.get_link_target_display = 'default' %}target="{{ content.get_link_target_display }}"{% endif %}>{{ content.link_text}}</a>{% endif %}
 </div>
