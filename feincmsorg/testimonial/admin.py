@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from feincms.testimonial import models
+from feincmsorg.testimonial import models
 
 
 admin.site.register(models.Testimonial,
