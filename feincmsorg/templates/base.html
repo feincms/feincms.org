@@ -1,9 +1,5 @@
 <!doctype html> {% load applicationcontent_tags %}
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7" lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8" lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
-<!--[if IEMobile 7 ]>    <html class="no-js iem7" lang="{{ LANGUAGE_CODE }}"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" {% block manifest %}{% endblock %}><!--<![endif]-->
+<html lang="{{ LANGUAGE_CODE }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
@@ -17,27 +13,27 @@
 
     {% block og-tags %}
     <!-- required -->
-    <meta property="og:title" content="{% block meta-title %}{% endblock %}" />
+    <meta property="og:title" content="{{ feincms_page.title }} - feinCMS.org" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://{{ SITE_DOMAIN }}{{ feincms_page.get_absolute_url }}" />
-    <meta property="og:image" content="http://{{ SITE_DOMAIN }}{{ MEDIA_URL }}img/helsi.png" />
+    <meta property="og:url" content="http://feincms.org{{ feincms_page.get_absolute_url }}" />
+    <meta property="og:image" content="http://feincms.org/media/img/design/logo_feincms.png" />
     <!-- /required -->
     <meta property="og:language" content="{{ LANGUAGE_CODE }}" />
     <meta property="og:country-name" content="Switzerland" />
     {% endblock %}
 
-    {% block css %}
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/boilerplate.css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/grid.css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/forms.css" />
-    {# <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery-ui-1.8.5.default.css" /> #}
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" />
     <link href="http://fast.fonts.com/cssapi/7ce1588c-5321-463a-af7f-21dbda5cb5eb.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}lib/jquery-moodboard/moodboard.css" />
-    {% endblock %}
-    {% block extra-css %}{% endblock %}
-    {{ feincms_page.content.media.css }}
     <!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/ie.css" /><![endif]-->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ MEDIA_URL }}lib/jquery/jquery-1.6.1.min.js">\x3C/script>')</script>
+
+    {{ feincms_page.content.media.css }}
 
     <script type="text/javascript">
         var _gaq = [['_setAccount', '{{ GOOGLE_ANALYTICS }}'], ['_trackPageview']];
@@ -49,15 +45,12 @@
         }
     </script>
 
-    <title>
-    {% block title %}feinCMS.org{% endblock %}
-    </title>
+    <title>{% block title %}feinCMS.org{% endblock %}</title>
 
     {% block extra-head %}{% endblock %}
 </head>
 
-<body id="id_{{ feincms_page.slug }}" class="{{ LANGUAGE_CODE|slice:"0:2" }} {{ feincms_page.template|slugify }}">
-<!--[if lt IE 7]><div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>      </div>      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>    </div>  </div><![endif]-->
+<body>
 <div class="container">
     <header><div id="header">
         <a href="/"><img id="logo" src="{{ MEDIA_URL }}img/design/logo_feincms.png" alt="FeinCMS Logo"></a>
@@ -100,16 +93,6 @@
 </div>
 {% endif %}
 
-{% if debug %}
-<script type="text/javascript" src="{{ MEDIA_URL }}lib/jquery/jquery-1.6.1.js"></script>
-{% else %}
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ MEDIA_URL }}lib/jquery/jquery-1.6.1.min.js">\x3C/script>')</script>
-{% endif %}
-{# <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script> #}
-{# <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script> #}
-
-<script type="text/javascript" src="{{ MEDIA_URL }}js/utils.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}js/global.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}lib/jquery-moodboard/moodboard.js"></script>
 {% block extra-js %}{% endblock %}
