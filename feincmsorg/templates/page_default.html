@@ -2,14 +2,15 @@
 {% load feincms_tags feincms_page_tags applicationcontent_tags %}
 
 {% block moodboard %}
-    <div class="moodboard span-15">
+    <div class="moodboard span-{% if feincms_page.content.sidebar|length = 0 %}24{% else %}15{% endif %}">
         <h1 class="contenttitle">{% if feincms_page.content_title %}{{ feincms_page.content_title }}{% else %}{{ feincms_page.title }}{% endif %}</h1>
         {% feincms_render_region feincms_page "moodboard" request %}
     </div>
 {% endblock moodboard %}
 
 {% block content %}
-    <div class="span-15">
+    
+    <div class="span-{% if feincms_page.content.sidebar|length = 0 %}24{% else %}15{% endif %}">
         {% feincms_render_region feincms_page "main" request %}
     </div>
     <div id="sidebar" class="span-8 last">
