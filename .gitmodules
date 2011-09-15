@@ -16,3 +16,6 @@
 [submodule "lib/feincms-oembed"]
 	path = lib/feincms-oembed
 	url = git://github.com/feincms/feincms-oembed.git
+[submodule "lib/elephantblog"]
+	path = lib/elephantblog
+	url = git://github.com/matthiask/feincms-elephantblog.git
