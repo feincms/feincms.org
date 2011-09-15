@@ -12,7 +12,7 @@ if 'runserver' in sys.argv:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
 
 GOOGLE_ANALYTICS = 'UA-xxxxxxx-xx'
