@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'feincms.module.page',
     'feincms_oembed',
     'mptt',
+    'feincmsorg.testimonial',
 )
 
 LANGUAGES = (

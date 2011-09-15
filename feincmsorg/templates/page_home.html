@@ -1,5 +1,5 @@
 {% extends "feincms_base.html" %}
-{% load feincms_tags feincms_page_tags applicationcontent_tags %}
+{% load feincms_tags feincms_page_tags applicationcontent_tags testimonial_tags %}
 
 {% block moodboard %}
 <div class="slides playing clearfix">
@@ -22,6 +22,10 @@
         </div>
         <div id="home-box-center">
             <h2>Top Features</h2>
+            {% load_testimonials %}
+            {% for testimonial in testimonials %}
+                {{ testimonial.name }}
+            {% endfor %}
             <ul>
                 <li>Top Feature 1</li>
                 <li>Top Feature 2</li>
@@ -30,14 +34,13 @@
         </div>
         <div id="home-box-right">
             <div class="quotes moodboard">
+            {% load_testimonials %}
+            {% for testimonial in testimonials %}
                 <div class="slide">
-                    <h2>Max Muster</h2>
-                    <p class="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Lorem ipsum dolor sit amet, consectetuer.</p>
+                    <h2>{{ testimonial.name }}</h2>
+                    <p class="quote">{{ testimonial.text }}</p>
                 </div>
-                <div class="slide">
-                    <h2>Erika Mustermann</h2>
-                    <p class="quote">sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                </div>
+            {% endfor %}
             </div>
         </div>
     </div>

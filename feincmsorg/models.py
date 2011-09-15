@@ -40,18 +40,6 @@ Page.register_templates({
     })
 
 
-class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ('name', 'text', 'is_active')
-
-
-class Testimonial(models.Model):
-    is_active = models.BooleanField()
-    name = models.CharField(max_length=100)
-    text = models.TextField()
-
-admin.site.register(Testimonial, TestimonialAdmin)
-
-
 class ArticleContentAdminForm(ItemEditorForm):
     def __init__(self, *args, **kwargs):
         super(ArticleContentAdminForm, self).__init__(*args, **kwargs)
