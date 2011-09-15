@@ -286,6 +286,32 @@ p.quote:after {
 
 #quote-navigation {
     margin: 140px 0 0 180px;
+    position: relative;
+    z-index:105;
+}
+
+#logos {
+   position: relative; 
+}
+
+#logo-googlegroups {
+    background: url(/media/img/design/button_googlegroups.png) no-repeat;
+    display: block;
+    float: left;
+    height: 62px;
+    left: -130px;
+    position: relative;
+    width: 148px;
+}
+
+#logo-github {
+    background: url(/media/img/design/button_github.png) no-repeat;
+    display: block;
+    float: left;
+    height: 56px;
+    position: relative;
+    left: 133px;
+    width: 130px;
 }
 
 /*------------------------------------------------------------------
