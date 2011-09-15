@@ -192,6 +192,11 @@ article img, .article img {
     float: left;
 }
 
+.article-link-box, .article-link-box:hover, .article-link-box:active, .article-link-box:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
 /*------------------------------------------------------------------
 sidebar
 -------------------------------------------------------------------*/
