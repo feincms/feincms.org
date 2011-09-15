@@ -1,0 +1,5 @@
+{% if content.link %}<a class="article-link-box" href="{{ content.link }}">{% endif %}
+    {% if content.mediafile %}<img src="{{ content.mediafile.file.url }}">{% endif %}
+    <h2>{{ content.title }}</h2>
+    <div>{{ content.text|safe }}</div>
+{% if content.link %}</a>{% endif %}

@@ -1,6 +1,4 @@
-<div class="slide">
-    <img class="slide-image" src="{{ article.mediafile.file.url }}">
-    <h1 class="slide-title">{{ article.title }}</h1>
-    <div class="slide-text">{{ article.text|safe }}</div>
-    <a class="button" href="{{ article.link }}" {% if not article.get_link_target_display = 'default' %}target="{{ article.get_link_target_display }}"{% endif %}>{{ article.link_text}}</a>
-</div>
+<img src="{{ content.mediafile.file.url }}">
+<h1>{{ content.title }}</h1>
+<div>{{ content.text|safe }}</div>
+<a href="{{ content.link }}">{{ content.link_text}}</a>
