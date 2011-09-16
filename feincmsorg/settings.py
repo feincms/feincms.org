@@ -48,6 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'feincmsorg.middleware.ForceDomainMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -127,3 +128,5 @@ SOUTH_MIGRATION_MODULES = dict((app, '%s.migrate.%s' % (APP_MODULE, app)) for ap
     'medialibrary',
     'elephantblog',
     ))
+
+FORCE_DOMAIN = 'feincms.org'
