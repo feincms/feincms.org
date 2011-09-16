@@ -55,7 +55,7 @@ class ArticleContentInline(FeinCMSInline):
 class ArticleContent(models.Model):
     feincms_item_editor_inline = ArticleContentInline
 
-    title = models.CharField(max_length=200, blank=True)
+    title = models.CharField(_('title'), max_length=200, blank=True)
     text = models.TextField(_('text'), blank=True)
     link = models.URLField(verify_exists=False, blank=True)
     link_text = models.CharField(max_length=50, blank=True)
@@ -63,7 +63,7 @@ class ArticleContent(models.Model):
 
     class Meta:
         abstract = True
-        verbose_name = "Article Content"
+        verbose_name = "Article content"
 
     def render(self, **kwargs):
         return render_to_string([
@@ -79,6 +79,9 @@ Page.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, re
 Page.create_content_type(FormContent)
 Page.create_content_type(ArticleContent)
 
+Entry.register_regions(
+    ('main', _('Main content area')),
+    )
 Entry.create_content_type(RichTextContent, cleanse=True)
 Entry.create_content_type(MediaFileContent, TYPE_CHOICES=MEDIA_TYPE_CHOICES)
 Entry.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, regions=('main',))
