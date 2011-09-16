@@ -23,6 +23,10 @@ MEDIA_TYPE_CHOICES = (
     ('default', _('default')),
 )
 
+DIMENSION_CHOICES = (
+    ('590x432', _('default')),
+)
+
 Page.register_templates({
     'title': 'Standard template',
     'path': 'page_default.html',
@@ -75,7 +79,7 @@ class ArticleContent(models.Model):
 Page.register_extensions('changedate', 'navigation', 'ct_tracker')
 Page.create_content_type(RichTextContent, regions=('main', 'sidebar', 'moodboard'), cleanse=True)
 Page.create_content_type(MediaFileContent, TYPE_CHOICES=MEDIA_TYPE_CHOICES)
-Page.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, regions=('main',))
+Page.create_content_type(OembedContent, DIMENSION_CHOICES=DIMENSION_CHOICES, regions=('main',))
 Page.create_content_type(FormContent)
 Page.create_content_type(ArticleContent)
 
@@ -84,4 +88,4 @@ Entry.register_regions(
     )
 Entry.create_content_type(RichTextContent, cleanse=True)
 Entry.create_content_type(MediaFileContent, TYPE_CHOICES=MEDIA_TYPE_CHOICES)
-Entry.create_content_type(OembedContent, DIMENSION_CHOICES=MEDIA_TYPE_CHOICES, regions=('main',))
+Entry.create_content_type(OembedContent, DIMENSION_CHOICES=DIMENSION_CHOICES, regions=('main',))
