@@ -80,9 +80,13 @@ h3, h3 a {
     margin: 10px 0 5px 0;
 }
 
-a, a:hover, a:active, a:focus {
+a, a:active, a:focus {
     color: #72b038;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a.button {
@@ -352,6 +356,10 @@ article header {
 #sidebar ul {
     list-style: none;
     padding: 0;
+}
+
+.pagination {
+    text-align: center;
 }
 
 /*------------------------------------------------------------------
