@@ -18,7 +18,7 @@ font-family:'FuturaW01-HeavyOblique';
 
 body {
     font-family: 'Bookman Old Style W01';
-    font-size: 0.9em;
+font-size: 0.9em;
 }
 
 header, #header {
@@ -218,7 +218,11 @@ sidebar
     margin: 0 0 20px 0;
 }
 
-.box-dark h2, .box-bright h2 {
+.box-dark a, .box-bright a {
+    color: #fff;
+}
+
+.box-dark h2, .box-bright h2, .box-dark h2 a, .box-bright h2 a {
     color: #fff;
     font-family: 'FuturaW01-HeavyOblique';
     font-weight: normal;
@@ -343,6 +347,11 @@ blog
 article header {
     height: auto;
     margin: 0 0 5px 0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
 /*------------------------------------------------------------------
