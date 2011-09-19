@@ -5,13 +5,21 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from elephantblog.sitemap import EntrySitemap
+from feincms.module.page.sitemap import PageSitemap
+
 
 admin.autodiscover()
 
+sitemaps = {
+    'pages': PageSitemap,
+    'blog': EntrySitemap,
+}
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps }),
 )
 
 if 'runserver' in sys.argv:
