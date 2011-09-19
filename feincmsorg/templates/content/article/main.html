@@ -1,5 +1,7 @@
+{% load feincms_thumbnail %}
 <article><div class="article clearfix">
-    {% if content.mediafile %}<img src="{{ content.mediafile.file.url }}">{% endif %}
+    {% if content.mediafile %}<img src="{{ content.mediafile.file|thumbnail:"590x700" }}" style="margin-right:15px">{% endif %}
     {% if content.title %}<h3>{{ content.title }}</h3>{% endif %}
     {% if content.text %}<div class="text">{{ content.text|safe }}</div>{% endif %}
+    {% if content.link %}<a class="button" href="{{ content.link }}" {% if not content.get_link_target_display = 'default' %}target="{{ content.get_link_target_display }}"{% endif %}>{{ content.link_text}}</a>{% endif %}
 </div></article>
