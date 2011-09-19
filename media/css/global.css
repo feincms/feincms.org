@@ -55,7 +55,7 @@ footer, #footer {
 /*------------------------------------------------------------------
 basic styling
 -------------------------------------------------------------------*/
-h1 {
+h1, h1 a {
     color: #72b038;
     font-family: 'FuturaW01-HeavyOblique';
     font-size: 25px;
@@ -64,19 +64,25 @@ h1 {
     text-transform: uppercase;
 }
 
-h2 {
+h2, h2 a {
     color: #72b038;
     font-family: 'FuturaW01-HeavyOblique';
     font-size: 17px;
     margin: 10px 0 0 0;
+    text-decoration: none;
     text-transform: uppercase;
 }
 
-h3 {
+h3, h3 a {
     color: #3b3b3b;
     font-family: 'BookmanOldStyleW01-Bold 691973';
     font-size: 15px;
     margin: 10px 0 5px 0;
+}
+
+a, a:hover, a:active, a:focus {
+    color: #72b038;
+    text-decoration: none;
 }
 
 a.button {
@@ -330,252 +336,18 @@ footer hr {
 #logo-python, #logo-django {
     float: right;
 }
-/*
-/*
-#moodboard {
-    height: 306px;
-    background: silver;
-    position: relative;
-}
-#wrapper {
-    padding-top: 54px;
-    background: white;
-    min-height: 400px;
-}
-header {
-    background-color: white;
-    border: 1px solid transparent;
-    display: block;
-    height: 72px;
-    /*margin-bottom: 180px;*//*
-}
-
-#footer {
-    width: 950px;
-    margin: 0 auto;
-}
-
-#sidebar {
-
-}
-#main {
-    margin-bottom: 100px;
-}
-
-/* navigation *//*
-
-nav a {
-    color: #444444;
-    text-decoration: none;
-}
-#language-navigation {
-
-}
-
-nav a.mark, nav a:hover {
-    color: #356fd9;
-    text-decoration: none;
-}
-
-#nav-level-1 {
-    height: 36px;
-    margin-top: 36px;
-}
-.a-level-1 {
-    display: block;
-    float: left;
-    font-size: 14px;
-    line-height: 30px;
-    padding: 0 20px 6px 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.ul-level-2 {
-    font-weight: bold;
-}
-
-.li-level-2 {
-    min-height: 34px;
-    border-bottom: 1px dotted #444;
-    width: 100%;
-}
-.li-level-2.first {
-    border-top: 1px dotted #444;
-}
-.nav-level-2-link {
-    font-size: 1.5em;
-    line-height: 36px;
-}
-
-.ul-level-3 {
-    padding-bottom: 9px;
-}
-
-.li-level-3 {
-    min-height: 18px;
-}
-.ul-level-3-link {
-    line-height: 18px;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-/* footer *//*
-footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0; left: 0;
-    background-color: #222222;
-    height: 36px;
-}
-
-#social-icons {
-    float: left;
-}
-#meta-navigation {
-    float: right;
-
-}
-#meta-navigation a {
-    margin-left: 2em;
-}
-
-.social-icon {
-    margin: 3px 10px 8px 0;
-    display: block;
-    float: left;
-    background-image: url(/media/img/skel/social-media-icons.png);
-    width: 23px;
-    height: 25px;
-}
-
-div#social-icons.white .social-icon {
-    background-image: url(/media/img/skel/social-media-icons-white.png);
-}
-
-.rss-icon { background-position: 0 0}
-.rss-icon:hover { background-position: 0 -24px}
-.twitter-icon { background-position: -24px 0 }
-.twitter-icon:hover { background-position: -24px -24px }
-.facebook-icon { background-position: -48px 0 }
-.facebook-icon:hover { background-position: -48px -24px }
-.youtube-icon { background-position: -72px 0 }
-.youtube-icon:hover { background-position: -72px -24px }
-.myspace-icon { background-position: -96px 0 }
-.myspace-icon:hover { background-position: -96px -24px }
-.picasa-icon { background-position: -120px 0 }
-.picasa-icon:hover { background-position: -120px -24px }
-.wordpress-icon { background-position: -144px 0 }
-.wordpress-icon:hover { background-position: -144px -24px }
-.vimeo-icon { background-position: -168px 0 }
-.vimeo-icon:hover { background-position: -168px -24px }
-.flickr-icon { background-position: -191px 0 }
-.flickr-icon:hover { background-position: -191px -24px }
 
 /*------------------------------------------------------------------
-basic styling
--------------------------------------------------------------------*//*
-.languagelink {
-    color: #444444;
-}
-.languagelink.mark {
-    color: #356fd9;
-}
-a.button {
-    padding: 4px 10px;
-    margin: 8px 0;
-    background: transparent;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-/*------------------------------------------------------------------
-Pagination
--------------------------------------------------------------------*//*
-.pagination-step-back {
-    background: url(../img/arrow-lt.gif) left -16px no-repeat;
-    display: block;
-    padding-left: 17px;
-}
-.pagination-step-back:hover {
-    background-position: left 4px;
-}
-.gallery-content .gallery_next {
-    text-align: right;
-}
-.pagination-step-forward a {
-    background: url(../img/arrow-rt.gif) right -16px no-repeat;
-    padding-right: 17px;
-    display: block;
-}
-.pagination-step-forward:hover {
-    background-position: right 4px;
-}
-/*------------------------------------------------------------------
-mediafile content
--------------------------------------------------------------------*//*
-.download-box {
-    background: white;
-    border: 1px solid transparent;
-    height: 72px;
-    margin-bottom: 18px;
-}
-.download-link {
-    display: block;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.download-link-thumbnail, .download-link-icon {
-    background: white 0 0 no-repeat;
-    width: 52px; height: 62px;
-    top: 7px; left: 30px;
-    margin: 0;
-    display: block;
-}
-.download-link-icon {
-    background: url(/static/img/icons/media-file-icons-60prz.png) 0 0 no-repeat;
-}
-.download-link-caption {
-    top: 32px; left: 106px;
-    color: #444;
-    display: block;
-}
-.download-link-text {
-    color: #356fd9;
-}
-.download-link-icon.link-type-doc { background-position: 3px 0;}
-.download-link-icon.link-type-zip { background-position: -57px 0;}
-.download-link-icon.link-type-rar { background-position: -118px 0;}
-.download-link-icon.link-type-ppt { background-position: -466px 0;}
-.download-link-icon.link-type-mp3 { background-position: -351px 0;}
-.download-link-icon.link-type-xls { background-position: -408px 0;}
-.download-link-icon.link-type-txt { background-position: -525px 0;}
-.download-link-icon.link-type-pdf { background-position: -582px 0;}
-
-.image.left, .image.right {
-    padding-top: 4px;
-    margin-right: 10px;
-    margin-bottom: 4px;
-    width: 190px;
-}
-.image.right {
-    margin-left: 10px;
-    margin-right: 0;
-}
-.image.right img {
-    float: right;
-}
-.small.caption {
-    margin-bottom: 0;
-    line-height: 1.5em;
+blog
+-------------------------------------------------------------------*/
+article header {
+    height: auto;
+    margin: 0 0 5px 0;
 }
 
 /*------------------------------------------------------------------
 feinheit standard
--------------------------------------------------------------------*//*
-*/
+-------------------------------------------------------------------*/
 #byfeinheit {
     background:transparent url(/media/img/skel/feinheit.gif) no-repeat scroll 0 0;
     display:block;
