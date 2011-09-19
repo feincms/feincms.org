@@ -1,0 +1,76 @@
+{% extends feincms_page.template.path|default:"base.html" %}
+
+{% load elephantblog_tags feincms_tags i18n %}
+
+{% block title %}{% trans "News" %} - {{ block.super }}{% endblock %}
+
+{% block moodboard %}
+<div class="moodboard span-24">
+    <h1>News
+        {% if year %}for {{ year }}{% endif %}
+        {% if month %}for {{ month|date:"F Y" }}{% endif %}
+        {% if day %}for {{ day|date:"j. F Y" }}{% endif %}
+        {% if category %}for {{ category }}{% endif %}
+    </h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="sidebar" class="span-8 last">
+    <div class="categories box-dark">
+        {% elephantblog_categories as categories %}
+        <ul class="toc">
+            <li class="title"><h2><a href="{{ feincms_page.get_absolute_url }}">Kategorien</a></h2></li>
+            {% for category in categories %}
+                <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="archive box-bright">
+        {% elephantblog_archive_months as months %}
+        <ul class="toc">
+            {% for month in months %}
+                {% ifchanged month.year %}<h2><li class="title"><a href="{{ feincms_page.get_absolute_url }}{{ month.year }}/">Archiv {{ month.year }}</a></h2></li>{% endifchanged %}
+                <li><a href="{{ feincms_page.get_absolute_url }}{{ month|date:"Y/m/" }}">{{ month|date:"F" }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% block object_list %}
+{% for entry in object_list %}
+    <article>
+        <header>
+            <h2><a href="{{ entry.get_absolute_url }}">{{ entry }}</a></h2>
+            <small>
+                {% for category in entry.categories.all %}
+                    <a href="{{ category.get_absolute_url }}">{{ category }}</a>{% if not forloop.last %},{% else %} | {% endif %}
+                {% endfor %}
+                {{ entry.published_on|date:"j F Y" }}
+            </small>
+        </header>
+        {{ entry.first_image.render }}
+        {{ entry.first_richtext.render }}
+    </article>
+{% endfor %}
+{% endblock %}
+
+{% block pagination %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+    {% endif %}
+
+    {% for p in page_obj.page_range|default_if_none:page_obj.paginator.page_range %}
+        {% if not p %}&hellip;
+        {% else %}
+            <a {% if p == page_obj.number and not page_obj.show_all_objects %}class="mark"{% endif %} href="?page={{ p }}">{{ p }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+    {% endif %}
+</div>
+{% endblock %}
+{% endblock %}
+
