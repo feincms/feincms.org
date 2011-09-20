@@ -13,11 +13,14 @@
 
     {% block og-tags %}
     <!-- required -->
-    <meta property="og:title" content="{{ feincms_page.title }} - feinCMS.org" />
+    <meta property="og:title" content="feinCMS.org" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://feincms.org{{ feincms_page.get_absolute_url }}" />
-    <meta property="og:image" content="http://feincms.org/media/img/design/logo_feincms.png" />
+    <meta property="og:image" content="http://feincms.org/media/img/design/logo_feincms_facebook.png" />
+    <meta property="fb:admins" content="100000023660270"/>
+    <meta property="fb:app_id" content="126174477482748"/>
     <!-- /required -->
+    <meta property="og:description" content="One of the most advanced Content Management Systems built on Django" />
     <meta property="og:language" content="en" />
     <meta property="og:country-name" content="Switzerland" />
     {% endblock %}
