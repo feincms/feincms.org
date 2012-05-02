@@ -19,3 +19,9 @@
 [submodule "lib/elephantblog"]
 	path = lib/elephantblog
 	url = git://github.com/matthiask/feincms-elephantblog.git
+[submodule "lib/django-south"]
+	path = lib/django-south
+	url = https://github.com/lambdafu/django-south.git
+[submodule "lib/django-registration"]
+	path = lib/django-registration
+	url = https://github.com/nathanborror/django-registration.git

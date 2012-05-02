@@ -79,6 +79,7 @@ INSTALLED_APPS = (
 
     'form_designer',
     'elephantblog',
+    'south',
     #'pinging',
     #'disqus',
 
@@ -90,6 +91,8 @@ INSTALLED_APPS = (
     'feincms_oembed',
     'mptt',
     'feincmsorg.testimonial',
+    'feincmsorg.app_library',
+    'registration',
 )
 
 LANGUAGES = (
@@ -111,6 +114,9 @@ FEINCMS_RICHTEXT_INIT_CONTEXT  = {
 
 GRID = {'column': 30, 'spacing': 10, 'vertical': 18}
 
+ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = '/'
+
 #PINGING_WEBLOG_NAME = 'Mein grossartiger Blog!'
 #PINGING_WEBLOG_URL = 'http://www.feinheit.ch/blog'
 
@@ -127,6 +133,8 @@ SOUTH_MIGRATION_MODULES = dict((app, '%s.migrate.%s' % (APP_MODULE, app)) for ap
     'page',
     'medialibrary',
     'elephantblog',
+    'feincmsorg',
+    'feincmsorg.app_library',
     ))
 
 FORCE_DOMAIN = 'feincms.org'
