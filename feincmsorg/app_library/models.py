@@ -25,6 +25,8 @@ class AppPromo(models.Model, TranslatedObjectMixin):
     created = models.DateTimeField(_('created'), auto_now_add=True)
     updated = models.DateTimeField(_('updated'), auto_now=True)
 
+    download_count = models.IntegerField(_('download count'), default=0)
+
     class Meta:
         verbose_name = _('App promo')
         verbose_name_plural = _('App promos')
