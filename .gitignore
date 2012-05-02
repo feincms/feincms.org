@@ -13,4 +13,8 @@
 /media/uploads
 /media/cache
 /static
+.Python
+/bin/
+/include/
+/lib/python2.*
 /.idea/

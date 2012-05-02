@@ -1,6 +1,7 @@
 from django.db import models
 from feincms.translations import TranslatedObjectMixin, Translation
 from django.utils.translation import ugettext_lazy as _
+from feincms.content.application.models import permalink
 
 from django.contrib.auth.models import User
 
@@ -34,6 +35,10 @@ class AppPromo(models.Model, TranslatedObjectMixin):
 
     def __unicode__(self):
         return unicode(self.title)
+
+    @permalink
+    def get_absolute_url(self):
+        return ('app_library.urls', 'app_library_detail', (), {'slug': self.slug})
 
 
 class AppPromoTranslation(Translation(AppPromo)):

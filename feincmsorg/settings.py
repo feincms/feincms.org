@@ -67,6 +67,15 @@ TEMPLATE_DIRS = (
     os.path.join(APP_BASEDIR, APP_MODULE, 'templates'),
 )
 
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.contrib.github.GithubBackend',
+    'social_auth.backends.OpenIDBackend',
+    'social_auth.backends.contrib.bitbucket.BitbucketBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,7 +91,7 @@ INSTALLED_APPS = (
     'south',
     #'pinging',
     #'disqus',
-
+    'social_auth',
     APP_MODULE,
 
     'feincms',
@@ -115,7 +124,10 @@ FEINCMS_RICHTEXT_INIT_CONTEXT  = {
 GRID = {'column': 30, 'spacing': 10, 'vertical': 18}
 
 ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_URL          = '/login/'
 LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://feincms.org/'
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 
 #PINGING_WEBLOG_NAME = 'Mein grossartiger Blog!'
 #PINGING_WEBLOG_URL = 'http://www.feinheit.ch/blog'

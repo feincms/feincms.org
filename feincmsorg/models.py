@@ -83,6 +83,10 @@ Page.create_content_type(OembedContent, DIMENSION_CHOICES=DIMENSION_CHOICES, reg
 Page.create_content_type(FormContent)
 Page.create_content_type(ArticleContent)
 
+Page.create_content_type(ApplicationContent, APPLICATIONS=(
+    ('app_library.urls', 'App Library'),
+    ))
+
 Entry.register_regions(
     ('main', _('Main content area')),
     )
