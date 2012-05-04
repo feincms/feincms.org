@@ -1,0 +1,38 @@
+[
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2012-05-04T18:38:30",
+      "groups": [],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$1OCVRoHYqZhW$OQy6OGXXlYyK4GxqYo3dJyOez+/W8sUUbXzBMJ1CFtI=",
+      "email": "",
+      "date_joined": "2012-05-04T18:38:30"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+      "username": "demo",
+      "first_name": "Hans",
+      "last_name": "Muster",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-05-04T18:38:56",
+      "groups": [],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$MrtpKVdrtzwa$D9LRTrsjUb6qIWVNUvywwwIRZR3hhxwaQ7UFYe7MTWQ=",
+      "email": "hans.muster@demo.ch",
+      "date_joined": "2012-05-04T18:38:56"
+    }
+  }
+]

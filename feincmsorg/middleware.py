@@ -6,7 +6,7 @@ from django.http import HttpResponsePermanentRedirect
 
 class ForceDomainMiddleware(object):
     def process_request(self, request):
-        if 'runserver' in sys.argv:
+        if 'runserver' or 'test' in sys.argv:
             return
 
         if request.method != 'GET':
