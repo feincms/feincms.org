@@ -1,0 +1,21 @@
+{% load applicationcontent_tags %}
+<section>
+<div class="app_list">
+    <h2>App List</h2>
+    <ul>
+        {% for app in apps %}
+        <li class="app">
+            <div class="clearfix">
+                <div class="app-icon left"></div>
+                <div class="app-info left">
+                    <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'app_library.urls' slug=app.slug %}">{{ app.title }}</a></h2>
+                    {{ app.translation.short_description|safe }}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+        <li></li>
+    </ul>
+    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'app_library.urls' %}">Submit your own app</a></p>
+</div>
+</section>
