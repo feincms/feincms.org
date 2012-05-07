@@ -59,6 +59,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'feincms.context_processors.add_page_if_missing',
     'feincmsorg.context_processors.meta_navigation',
+    'social_auth.context_processors.social_auth_backends',
 )
 
 ROOT_URLCONF = APP_MODULE+'.urls'
@@ -71,8 +72,6 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.contrib.github.GithubBackend',
-    'social_auth.backends.OpenIDBackend',
-    'social_auth.backends.contrib.bitbucket.BitbucketBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -124,10 +123,12 @@ FEINCMS_RICHTEXT_INIT_CONTEXT  = {
 GRID = {'column': 30, 'spacing': 10, 'vertical': 18}
 
 ACCOUNT_ACTIVATION_DAYS = 7
-LOGIN_URL          = '/login/'
+LOGIN_URL          = 'accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://feincms.org/'
+
+
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 
 #PINGING_WEBLOG_NAME = 'Mein grossartiger Blog!'
 #PINGING_WEBLOG_URL = 'http://www.feinheit.ch/blog'
