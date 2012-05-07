@@ -1,5 +1,6 @@
 from django.db import models
 from django.forms.widgets import Textarea
+from django.template.defaultfilters import slugify
 from feincms.translations import TranslatedObjectMixin, Translation
 from django.utils.translation import ugettext_lazy as _
 from feincms.content.application import models as app_models
@@ -60,4 +61,4 @@ class AppPromoForm(forms.ModelForm):
 
     class Meta:
         model = AppPromo
-        exclude = ('slug', 'author', 'created', 'updated', 'download_count')
+        exclude = ('author', 'created', 'updated', 'download_count')

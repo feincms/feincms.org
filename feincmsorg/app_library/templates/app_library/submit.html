@@ -1,6 +1,8 @@
+{% load applicationcontent_tags %}
 <section>
     <div class="app-submission">
-        <form class="submission-form" enctype="multipart/form-data" method="POST">
+        <form class="submission-form" enctype="multipart/form-data" method="POST"
+              action="{{ action }}">
             <table>
                 {{ form }}
                 <tr><td><input type="submit" value="submit" /></td></tr>
