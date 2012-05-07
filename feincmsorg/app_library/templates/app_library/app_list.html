@@ -10,12 +10,14 @@
                 <div class="app-info left">
                     <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'app_library.urls' slug=app.slug %}">{{ app.title }}</a></h2>
                     {{ app.translation.short_description|safe }}
+                    {% if app.author == request.user %}<p><a href="{% app_reverse 'app_library_edit' 'app_library.urls' slug=app.slug %}">edit</a></p>{% endif %}
                 </div>
             </div>
         </li>
         {% endfor %}
         <li></li>
     </ul>
-    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'app_library.urls' %}">Submit your own app</a></p>
+    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'app_library.urls' %}">Submit your own app</a> |
+    <a href="{% url auth_login %}?next={% app_reverse 'app_library_list' 'app_library.urls' %}">Login</a></p>
 </div>
 </section>
