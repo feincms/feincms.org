@@ -72,6 +72,7 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.contrib.github.GithubBackend',
+    'email_usernames.backends.EmailOrUsernameModelBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -101,6 +102,7 @@ INSTALLED_APPS = (
     'feincmsorg.testimonial',
     'feincmsorg.app_library',
     'registration',
+    'email_usernames',
 )
 
 LANGUAGES = (
@@ -129,6 +131,7 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
 
 #PINGING_WEBLOG_NAME = 'Mein grossartiger Blog!'
 #PINGING_WEBLOG_URL = 'http://www.feinheit.ch/blog'
