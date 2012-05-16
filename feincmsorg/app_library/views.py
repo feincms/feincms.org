@@ -3,10 +3,16 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.shortcuts import render, get_object_or_404
 from django.template.defaultfilters import slugify
 from feincms.content.application.models import app_reverse
-from feincmsorg.app_library.models import AppPromo, AppPromoForm, AppPromoTranslation
+from feincmsorg.app_library.models import AppPromo, AppPromoForm, AppPromoTranslation, CategoryTranslation
 
 def app_list(request):
     apps = AppPromo.objects.all()
+    context = {'apps': apps }
+    return render(request, 'app_library/app_list.html', context)
+
+def app_category_list(request, slug):
+    category_trans = get_object_or_404(CategoryTranslation, slug=slug)
+    apps = AppPromo.objects.filter(category=category_trans.parent)
     context = {'apps': apps }
     return render(request, 'app_library/app_list.html', context)
 

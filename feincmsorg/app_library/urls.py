@@ -6,4 +6,7 @@ urlpatterns = patterns('app_library.views',
     url(r'^submit/$', 'app_submit', name="app_library_submit"),
     url(r'^edit/(?P<slug>[^/]+)/$', 'app_edit', name="app_library_edit"),
     url(r'^(?P<slug>[^/]+)/$', 'app_detail', name="app_library_detail"),
+    url(r'^category/(?P<slug>[-\w]+)/$', 'app_category_list', name='app_library_category_detail'),
 )
+
+
