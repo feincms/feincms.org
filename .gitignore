@@ -4,6 +4,7 @@
 \#*#
 *.mo
 /log/*.log*
+.DS_Store
 .settings
 .project
 .pydevproject
