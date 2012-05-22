@@ -1,27 +1,24 @@
 {% load applicationcontent_tags %}
 <section>
-<div class="app_list">
-    <h2>App List</h2>
+<div class="app-list">
     <ul>
         {% for app in apps %}
         <li class="app">
             <div class="clearfix">
-                <div class="app-icon left"></div>
+            {% if app.icon %}
+                <div class="app-icon left"><img src="{{ MEDIA_URL }}{{ app.icon }}"/></div>
+            {% else %}
+                <div class="app-icon left"><img src="{{ MEDIA_URL }}img/design/icon_default.png"/></div>
+            {% endif %}
                 <div class="app-info left">
                     <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'app_library.urls' slug=app.slug %}">{{ app.title }}</a></h2>
                     {{ app.translation.short_description|safe }}
-                    {% if app.author == request.user %}<p><a href="{% app_reverse 'app_library_edit' 'app_library.urls' slug=app.slug %}">edit</a></p>{% endif %}
+                    {% if app.author == request.user %}<a href="{% app_reverse 'app_library_edit' 'app_library.urls' slug=app.slug %}">edit</a>{% endif %}
                 </div>
             </div>
         </li>
         {% endfor %}
-        <li></li>
     </ul>
-    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'app_library.urls' %}">Submit your own app</a> |
-    {% if request.user.is_authenticated %}
-    Logged in as {{ request.user.email }} (<a href="{% url auth_logout %}">Logout</a>)
-    {% else %}
-    <a href="{% url auth_login %}?next={% app_reverse 'app_library_list' 'app_library.urls' %}">Login</a></p>
-    {% endif %}
+    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'app_library.urls' %}">Submit your own app</a>
 </div>
 </section>
