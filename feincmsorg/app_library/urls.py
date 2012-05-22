@@ -1,4 +1,4 @@
-from django.conf.urls import *
+from django.conf.urls.defaults import *
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('app_library.views',
