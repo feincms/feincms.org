@@ -5,14 +5,16 @@
 {% block body_class %}{{ block.super }} registration_form{% endblock %}
 
 
-{% block content_title %}
-  <h2>Register for an account</h2>
-{% endblock %}
-
-
 {% block inner-content %}
-  <form action="." method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <p class="submit"><button type="submit">Submit</button></p>
-  </form>
+<form action="." method="post" class="register_form">{% csrf_token %}
+    <h2>Register for an account</h2>
+    {% for field in form %}
+    <div class="{% if field.errors %}errors {% endif %}{% if field.field.required %}required{% endif %}">
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% endfor %}
+    <input type="submit" value="Submit" />
+</form>
 {% endblock %}
