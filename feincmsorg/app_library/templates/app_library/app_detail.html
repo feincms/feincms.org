@@ -1,11 +1,39 @@
+{% load i18n %}
 <section>
     <div class="app-detail">
-        <div class="app-header clearfix">
-            <div class="app-icon left"></div>
+            <div class="app-icon left">
+            {% if app.icon %}
+                <img src="{{ MEDIA_URL }}{{ app.icon }}"/>
+            {% else %}
+                <img src="{{ MEDIA_URL }}img/design/icon_default.png"/>
+            {% endif %}
+            </div>
             <div class="app-info left">
                 <h2 class="app-title">{{ app.title }}</h2>
+                <div class="properties">
+                    <span class="label">{% trans "Author" %}</span>: {{ app.author }}<br />
+                    <span class="label">{% trans "License" %}</span>: {{ app.licence }}<br />
+                    {% if app.categories.count %}
+                        <span class="label">
+                        {% if app.categories.count > 1 %}
+                            {% trans "Categories" %}:
+                        {% else %}
+                            {% trans "Category" %}:
+                        {% endif %}
+                        </span>
+                        {% for cat in app.categories.all %}
+                            {{ cat }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="description">
+                {{ app.translation.long_description|safe }}
+                </div>
+                <div class="links">
+                    {% if app.project_url %}<a href="{{ app.project_url }}">{% trans "Website" %}</a>{% endif %}
+                    {% if app.project_url and app.doc_url %} / {% endif %}
+                    {% if app.doc_url %}<a href="{{ app.doc_url }}">{% trans "Documentation" %}</a>{% endif %}
+                </div>
             </div>
-        </div>
-        {{ app.translation.long_description|safe }}
     </div>
 </section>
