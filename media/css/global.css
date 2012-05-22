@@ -52,6 +52,10 @@ footer, #footer {
     position: relative;
 }
 
+.clear {
+    clear: both;
+}
+
 /*------------------------------------------------------------------
 basic styling
 -------------------------------------------------------------------*/
@@ -89,6 +93,7 @@ a:hover {
     text-decoration: underline;
 }
 
+input[type=submit],
 a.button {
     background: url(/media/img/design/button-arrow-down.png) #003325 no-repeat right;
     color: #72b038;
@@ -360,6 +365,155 @@ article header {
 
 .pagination {
     text-align: center;
+}
+
+/*------------------------------------------------------------------
+app library
+-------------------------------------------------------------------*/
+/* app list */
+.app-list>ul{
+    padding: 0;
+}
+
+.app {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.app-title {
+    margin-top: 0;
+}
+
+.app-icon {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.app-info {
+    margin-left: 10px;
+    width: 840px;
+}
+
+.app-edit {
+    float: left;
+}
+
+/* app detail */
+.app-detail .app-info {
+    margin-bottom: 20px;
+}
+
+.app-detail .properties {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+}
+
+.app-detail .links {
+    margin-top: 1em;
+}
+
+
+/* submit form */
+.submission-form,
+.register_form,
+.login_form {
+    width: 508px;
+}
+
+label {
+    float: left;
+    width: 200px;
+    line-height: 1.8em;
+    clear: both;
+    padding-top: 5px;
+    font-weight: normal;
+}
+
+.required {
+    clear: both;
+}
+
+.required label {
+    font-weight: bold;
+}
+
+.mceLayout {
+    margin-bottom: 10px!important;
+}
+
+input,
+textarea,
+select {
+    float: left;
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 300px;
+}
+
+.errors input,
+.errors textarea,
+.errors select,
+.errors .mceLayout {
+    border: 1px solid #8A1F11!important;
+    background-color: #FCEFF0!important;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #003325!important;
+    background-color: #F1FCE5!important;
+    -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+         -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type=submit],
+form .button {
+    font-size: 14px;
+    border: none;
+    klear: both;
+    float: right;
+    margin: 7px 0 20px 0;
+    width: auto;
+}
+
+form ul {
+    list-style: none;
+    padding: 0;
+    float: left;
+    width: 200px;
+    margin: 0 0 5px 0;
+}
+
+form input[type=checkbox] {
+    width: auto;
+    margin: 5px 10px 0 0;
+}
+
+form ul label {
+    padding: 0;
+    font-weight: normal;
+}
+
+ul.errorlist {
+    color: #8A1F11;
+    margin: -7px 0 5px 200px;
+}
+
+/*------------------------------------------------------------------
+login
+-------------------------------------------------------------------*/
+.social-auth .button {
+    margin-right: 10px;
 }
 
 /*------------------------------------------------------------------
