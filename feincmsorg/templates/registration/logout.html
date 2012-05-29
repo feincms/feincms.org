@@ -12,10 +12,18 @@
 
 
 {% block inner-content %}
-  <form action="{% url django.contrib.auth.views.login %}" method="post" class="login_form">{% csrf_token %}
-    <p><label for="id_username">Username</label> <input type="text" name="username" id="id_username"></p>
-    <p><label for="id_password">Password</label> <input type="password" name="password" id="id_password"></p>
-    <p class="submit"><button type="submit" name="submit" value="Login">Log in</button></p>
+<h2>Log in</h2>
+<form action="{% url django.contrib.auth.views.login %}" method="post" class="login_form clearfix">{% csrf_token %}
+    <div class="required">
+        <label for="id_email">E-Mail</label>
+        <input type="text" name="email" id="id_email">
+    </div>
+    <div class="required">
+        <label for="id_password">Password</label>
+        <input type="password" name="password" id="id_password">
+    </div>
+    <input class="clearfix" type="submit" value="Login">
     <input type="hidden" name="next" value="{% if next %}{{ next }}{% else %}/{% endif %}">
-  </form>
+</form>
+{% include "registration/_social_auth.html" %}
 {% endblock %}
