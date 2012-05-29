@@ -45,6 +45,7 @@
 <body>
 <div class="container">
     <header><div id="header">
+        {% if request.user.is_authenticated %}<a class="logout" href="{% url auth_logout %}">logout</a>{% endif %}
         <a href="/"><img id="logo" src="{{ MEDIA_URL }}img/design/logo_feincms.png" alt="FeinCMS Logo"></a>
         <div id="navigation">
             <nav>
