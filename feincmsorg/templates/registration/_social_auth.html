@@ -1,0 +1,11 @@
+<h2 class="clearfix">Log in with social auth</h2>
+<div class="social-auth clearfix">
+    <form>
+    {% for name in social_auth.backends %}
+        <a class="button left" rel="nofollow" href="{% url socialauth_begin name %}">{{ name|title }}</a>
+    {% endfor %}
+    </form>
+</div>
+<h2>Create new account</h2>
+<form><a class="button left" href="{% url email-register %}">Register</a></form>
+
