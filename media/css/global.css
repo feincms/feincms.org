@@ -126,6 +126,11 @@ a.button-previous {
     width: 53px;
 }
 
+a.logout {
+    position: absolute;
+    right: 0;
+}
+
 /*------------------------------------------------------------------
 navigation
 -------------------------------------------------------------------*/
@@ -398,6 +403,15 @@ app library
     float: left;
 }
 
+.app-info ul {
+    margin: 0 1.5em 1.5em 0;
+}
+
+a.edit {
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
 /* app detail */
 .app-detail .app-info {
     margin-bottom: 20px;
@@ -429,7 +443,7 @@ label {
     font-weight: normal;
 }
 
-.required {
+.submission-form .required {
     clear: both;
 }
 
