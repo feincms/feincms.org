@@ -1,17 +1,19 @@
-{% load i18n %}
+{% load i18n applicationcontent_tags %}
 <section>
     <div class="app-detail">
-            <div class="app-icon left">
-            {% if app.icon %}
-                <img src="{{ MEDIA_URL }}{{ app.icon }}"/>
-            {% else %}
-                <img src="{{ MEDIA_URL }}img/design/icon_default.png"/>
-            {% endif %}
+            <div class="app-icon left"> 
+	            <div class="iconstyle">
+	            {% if app.icon %}
+	                <img src="{{ MEDIA_URL }}{{ app.icon }}"/>
+	                {% else %}
+	                <img src="{{ MEDIA_URL }}img/design/icon_default.png"/>
+	            {% endif %}
+	            </div>
             </div>
             <div class="app-info left">
-                <h2 class="app-title">{{ app.title }}</h2>
+                <h2 class="app-title">{{ app.title }}{% if app.author == request.user %}&nbsp;<a href="{% app_reverse 'app_library_edit' 'feincmsorg.app_library.urls' slug=app.slug %}" class="edit">(edit)</a>{% endif %}</h2>
                 <div class="properties">
-                    <span class="label">{% trans "Author" %}</span>: {{ app.author }}<br />
+                    <span class="label">{% trans "Author" %}</span>: {{ app.author.get_full_name }}<br />
                     <span class="label">{% trans "License" %}</span>: {{ app.licence }}<br />
                     {% if app.categories.count %}
                         <span class="label">

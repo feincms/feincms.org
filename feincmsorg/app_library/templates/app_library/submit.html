@@ -9,6 +9,7 @@
                 {{ field.label_tag }}
                 {{ field }}
                 {{ field.errors }}
+                {% if field.field.help_text %}<p class="small">{{ field.field.help_text }}</p>{% endif %}
             </div>
             {% endfor %}
             <input type="submit" value="submit" />

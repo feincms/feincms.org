@@ -5,13 +5,19 @@
         {% for app in apps %}
         <li class="app">
             <div class="clearfix">
-            {% if app.icon %}
-                <div class="app-icon left"><img src="{{ MEDIA_URL }}{{ app.icon }}"/></div>
-            {% else %}
-                <div class="app-icon left"><img src="{{ MEDIA_URL }}img/design/icon_default.png"/></div>
-            {% endif %}
+            
+                <div class="app-icon left">
+                	<div class="iconstyle">
+                		{% if app.icon %}
+                		<img src="{{ MEDIA_URL }}{{ app.icon }}"/>
+                		{% else %}
+                		<img src="{{ MEDIA_URL }}img/design/icon_default.png"/>
+                		{% endif %}
+                	</div>
+              	</div>
+
                 <div class="app-info left">
-                    <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'feincms.app_library.urls' slug=app.slug %}">{{ app.title }}</a>{% if app.author == request.user %}&nbsp;<a href="{% app_reverse 'app_library_edit' 'app_library.urls' slug=app.slug %}" class="edit">(edit)</a>{% endif %}</h2>
+                    <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'feincmsorg.app_library.urls' slug=app.slug %}">{{ app.title }}</a>{% if app.author == request.user %}&nbsp;<a href="{% app_reverse 'app_library_edit' 'feincmsorg.app_library.urls' slug=app.slug %}" class="edit">(edit)</a>{% endif %}</h2>
                     {{ app.translation.short_description|safe }}
 
                 </div>

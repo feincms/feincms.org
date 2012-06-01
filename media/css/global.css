@@ -390,13 +390,23 @@ app library
 }
 
 .app-icon {
-    max-width: 64px;
-    max-height: 64px;
+    width: 100px;
+	min-height: 75px;
+}
+.iconstyle { 
+	width: 75px; 
+	height: 75px; 
+	overflow: hidden;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	-webkit-box-shadow: 1px 1px 5px 0 #ccc;
+	-moz-box-shadow: 1px 1px 5px 0 #ccc;
+	box-shadow: 1px 1px 5px 0 #ccc;
 }
 
 .app-info {
     margin-left: 10px;
-    width: 840px;
+    width: 810px;
 }
 
 .app-edit {

@@ -126,12 +126,15 @@ GRID = {'column': 30, 'spacing': 10, 'vertical': 18}
 
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_URL          = 'accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/plugins/submit/'
 LOGIN_REDIRECT_URL = '/logged-in/'
 
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 SOCIAL_AUTH_EXTRA_DATA = False
+SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
+SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
+SOCIAL_AUTH_ASSOCIATE_BY_MAIL = False
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 
 

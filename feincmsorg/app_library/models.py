@@ -10,6 +10,7 @@ from django import forms
 
 
 LICENCE_CHOICES = (('apache', _('apache')),
+                   ('bsd', _('BSD')),
                    ('gnu', _('GNU')),
                    ('pd', _('public domain')),
                    ('com', _('commercial')),
@@ -22,7 +23,7 @@ class Category(models.Model, translations.TranslatedObjectMixin):
     a many to many relationship.
     """
 
-    ordering = models.SmallIntegerField(_('ordering'), default=0)
+    ordering = models.SmallIntegerField(_('ordering'), default=100)
 
     class Meta:
         verbose_name = _('category')
@@ -51,7 +52,7 @@ class CategoryTranslation(translations.Translation(Category)):
 
     @app_models.permalink
     def get_absolute_url(self):
-        return ('app_library_category_detail', 'app_library.urls', (), {
+        return ('app_library_category_detail', 'feincmsorg.app_library.urls', (), {
             'slug': self.slug,
             })
 
@@ -64,9 +65,10 @@ class CategoryTranslation(translations.Translation(Category)):
 
 class AppPromo(models.Model, translations.TranslatedObjectMixin):
     title = models.CharField(_('Title'), max_length=50)
-    slug = models.SlugField(_('Slug'), max_length=50, unique=True, db_index=True)
+    slug = models.SlugField(_('Slug'), max_length=50, unique=True, db_index=True,
+            help_text=_('Use your pypi repo / github name here if possible'))
     icon = models.ImageField(_('App icon'), upload_to='app_icons', blank=True, null=True,
-            help_text=_('A 64x64 pixel Icon for your app (optional)'))
+            help_text=_('A 75x75 pixel Icon for your app (optional)'))
     project_url = models.URLField(_('Project URL'))
     doc_url = models.URLField(_('Documentation URL'), blank=True)
     licence = models.CharField(_('Licence'), max_length=16, choices=LICENCE_CHOICES,
@@ -89,7 +91,7 @@ class AppPromo(models.Model, translations.TranslatedObjectMixin):
 
     @app_models.permalink
     def get_absolute_url(self):
-        return ('app_library_detail', 'app_library.urls', (), {'slug': self.slug})
+        return ('app_library_detail', 'feincmsorg.app_library.urls', (), {'slug': self.slug})
 
 
 class AppPromoTranslation(translations.Translation(AppPromo)):
@@ -101,7 +103,7 @@ class AppPromoTranslation(translations.Translation(AppPromo)):
 
 
 class AppPromoForm(forms.ModelForm):
-    short_description = forms.CharField(max_length=200,
+    short_description = forms.CharField(max_length=300,
                          widget=Textarea(attrs={'cols': 80, 'rows': 4, 'class': 'richtext' }))
     long_description = forms.CharField(
                         widget=Textarea(attrs={'cols': 80, 'rows': 10, 'class': 'richtext' }))

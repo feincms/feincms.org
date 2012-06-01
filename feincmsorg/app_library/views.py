@@ -35,7 +35,7 @@ def app_submit(request):
             return HttpResponseRedirect(app.get_absolute_url())
     else:
         form = AppPromoForm()
-    action = app_reverse('app_library_submit', 'app_library.urls')
+    action = app_reverse('app_library_submit', 'feincmsorg.app_library.urls')
     return render(request, 'app_library/submit.html', {'form': form, 'action': action })
 
 @login_required(login_url='/accounts/login/')
@@ -57,5 +57,5 @@ def app_edit(request, slug):
             'long_description': app.translation.long_description }
         form = AppPromoForm(initial=data, instance=app)
 
-    action = app_reverse('app_library_edit', 'app_library.urls', kwargs={'slug': app.slug})
+    action = app_reverse('app_library_edit', 'feincmsorg.app_library.urls', kwargs={'slug': app.slug})
     return render(request, 'app_library/submit.html', {'form': form, 'action': action })
