@@ -20,7 +20,8 @@ GOOGLE_ANALYTICS = 'UA-xxxxxxx-xx'
 ADMINS = (
     (u'FEINHEIT Developers', 'dev@feinheit.ch'),
     (u'Matthias Kestenholz', 'mk@feinheit.ch'),
-    (u'Fabian Germann', 'fg@feinheit.ch'),
+   # (u'Fabian Germann', 'fg@feinheit.ch'),
+    (u'Simon Bächler', 'sb@feinheit.ch'),
 )
 MANAGERS = ADMINS
 CONTACT_FORM_EMAIL = [mail for name, mail in ADMINS]
@@ -127,9 +128,11 @@ GRID = {'column': 30, 'spacing': 10, 'vertical': 18}
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_URL          = 'accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/logged-in/'
 
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+SOCIAL_AUTH_EXTRA_DATA = False
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 
 
