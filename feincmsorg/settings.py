@@ -14,7 +14,6 @@ if 'runserver' in sys.argv:
 else:
     DEBUG = False
 
-
 GOOGLE_ANALYTICS = 'UA-xxxxxxx-xx'
 
 ADMINS = (
@@ -73,7 +72,7 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.contrib.github.GithubBackend',
-    'email_usernames.backends.EmailOrUsernameModelBackend',
+    'feincmsorg.email_usernames.backends.EmailOrUsernameModelBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -103,7 +102,7 @@ INSTALLED_APPS = (
     'feincmsorg.testimonial',
     'feincmsorg.app_library',
     'registration',
-    'email_usernames',
+    'feincmsorg.email_usernames',
 )
 
 LANGUAGES = (

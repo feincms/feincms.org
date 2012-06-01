@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.shortcuts import render, get_object_or_404
 from django.template.defaultfilters import slugify
 from feincms.content.application.models import app_reverse
-from feincmsorg.app_library.models import AppPromo, AppPromoForm, AppPromoTranslation, CategoryTranslation
+from .models import AppPromo, AppPromoForm, AppPromoTranslation, CategoryTranslation
 
 def app_list(request):
     apps = AppPromo.objects.all()

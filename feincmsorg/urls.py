@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'', include('social_auth.urls')),
-    url(r'apps', include('app_library.urls')),
+    url(r'apps', include('feincmsorg.app_library.urls')),
     url(r'^accounts/', include('feincmsorg.email_usernames.urls')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps }),
 )

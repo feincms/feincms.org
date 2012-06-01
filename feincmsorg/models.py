@@ -84,7 +84,7 @@ Page.create_content_type(FormContent)
 Page.create_content_type(ArticleContent)
 
 Page.create_content_type(ApplicationContent, APPLICATIONS=(
-    ('app_library.urls', 'App Library'),
+    ('feincmsorg.app_library.urls', 'App Library'),
     ))
 
 Entry.register_regions(

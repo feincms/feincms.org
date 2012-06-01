@@ -1,12 +1,12 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('email_usernames.views',
+urlpatterns = patterns('feincmsorg.email_usernames.views',
     url(r'^login/$', 'email_login', name="email-login"), 
 )
 
 
 from registration.views import register
-from email_usernames.forms import EmailRegistrationForm
+from .forms import EmailRegistrationForm
 urlpatterns += patterns('',
     url(r'^register/$', register,
             { 'form_class':EmailRegistrationForm,
