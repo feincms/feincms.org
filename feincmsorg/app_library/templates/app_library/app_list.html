@@ -2,7 +2,7 @@
 <section>
 <div class="app-list">
     <ul>
-        {% for app in apps %}
+        {% for app in paged.object_list %}
         <li class="app">
             <div class="clearfix">
             
@@ -19,12 +19,12 @@
                 <div class="app-info left">
                     <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'feincmsorg.app_library.urls' slug=app.slug %}">{{ app.title }}</a>{% if app.author == request.user %}&nbsp;<a href="{% app_reverse 'app_library_edit' 'feincmsorg.app_library.urls' slug=app.slug %}" class="edit">(edit)</a>{% endif %}</h2>
                     {{ app.translation.short_description|safe }}
-
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
-    <p><a class="submitlink" href="{% app_reverse 'app_library_submit' 'feincmsorg.app_library.urls' %}">Submit your own app</a>
+    {% if is_paginated %}{% load paginator %}{% paginator 3 %}{% endif %}
+    <p class="indent"><a class="submitlink" href="{% app_reverse 'app_library_submit' 'feincmsorg.app_library.urls' %}">Submit your own app</a>
 </div>
 </section>

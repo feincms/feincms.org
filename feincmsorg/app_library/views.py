@@ -3,11 +3,30 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.shortcuts import render, get_object_or_404
 from django.template.defaultfilters import slugify
 from feincms.content.application.models import app_reverse
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .models import AppPromo, AppPromoForm, AppPromoTranslation, CategoryTranslation
+
+PAGINATE_BY = 10
 
 def app_list(request):
     apps = AppPromo.objects.all()
-    context = {'apps': apps }
+    
+    #pagination
+    paginator = Paginator(apps, PAGINATE_BY)
+    try:
+        page = int(request.GET.get('page', 1))
+    except ValueError:
+        page = 1
+    
+    try:
+        paged = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        paged = paginator.page(paginator.num_pages)
+    
+    
+    context = {'apps': apps, 'page': page, 'paged': paged,
+               'is_paginated': paginator.num_pages>1 }
+    
     return render(request, 'app_library/app_list.html', context)
 
 def app_category_list(request, slug):
