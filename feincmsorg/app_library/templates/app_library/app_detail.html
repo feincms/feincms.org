@@ -32,9 +32,8 @@
                 {{ app.translation.long_description|safe }}
                 </div>
                 <div class="links">
-                    {% if app.project_url %}<a href="{{ app.project_url }}">{% trans "Website" %}</a>{% endif %}
-                    {% if app.project_url and app.doc_url %} / {% endif %}
-                    {% if app.doc_url %}<a href="{{ app.doc_url }}">{% trans "Documentation" %}</a>{% endif %}
+                    {% if app.project_url %}<a href="{{ app.project_url }}">{% trans "Project page" %}</a>{% endif %}
+                    {% if app.doc_url %} / <a href="{{ app.doc_url }}">{% trans "Documentation" %}</a>{% endif %}
                 </div>
             </div>
     </div>

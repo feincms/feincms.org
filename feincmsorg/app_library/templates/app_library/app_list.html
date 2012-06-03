@@ -1,4 +1,4 @@
-{% load applicationcontent_tags %}
+{% load applicationcontent_tags i18n %}
 <section>
 <div class="app-list">
     <ul>
@@ -19,6 +19,10 @@
                 <div class="app-info left">
                     <h2 class="app-title"><a href="{% app_reverse 'app_library_detail' 'feincmsorg.app_library.urls' slug=app.slug %}">{{ app.title }}</a>{% if app.author == request.user %}&nbsp;<a href="{% app_reverse 'app_library_edit' 'feincmsorg.app_library.urls' slug=app.slug %}" class="edit">(edit)</a>{% endif %}</h2>
                     {{ app.translation.short_description|safe }}
+                    <p class="links">
+	                    {% if app.project_url %}<a href="{{ app.project_url }}">{% trans "Project page" %}</a>{% endif %}
+	                    {% if app.doc_url %} / <a href="{{ app.doc_url }}">{% trans "Documentation" %}</a>{% endif %}
+	                </p>
                 </div>
             </div>
         </li>
