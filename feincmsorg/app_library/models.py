@@ -80,11 +80,12 @@ class AppPromo(models.Model, translations.TranslatedObjectMixin):
     categories = models.ManyToManyField(Category, blank=True)
 
     download_count = models.IntegerField(_('download count'), default=0)
+    is_featured = models.BooleanField(_('featured'), blank=True, default=False)
 
     class Meta:
         verbose_name = _('App promo')
         verbose_name_plural = _('App promos')
-        ordering = ['-updated']
+        ordering = ['-is_featured', '-updated']
 
     def __unicode__(self):
         return unicode(self.title)
@@ -110,7 +111,7 @@ class AppPromoForm(forms.ModelForm):
 
     class Meta:
         model = AppPromo
-        exclude = ('author', 'created', 'updated', 'download_count')
+        exclude = ('author', 'created', 'updated', 'download_count', 'is_featured')
         widgets = {
             'categories': forms.CheckboxSelectMultiple({'class': 'app-promo'})
         }

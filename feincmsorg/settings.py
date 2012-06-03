@@ -158,7 +158,7 @@ SOUTH_MIGRATION_MODULES = dict((app, '%s.migrate.%s' % (APP_MODULE, app)) for ap
     'feincmsorg.app_library',
     ))
 
-FORCE_DOMAIN = 'feincms.org'
+FORCE_DOMAIN = 'www.feincms.org'
 
 BLOG_TITLE = 'FeinCMS.org'
 BLOG_DESCRIPTION = 'FeinCMS release notes, tips and stuff.'

@@ -13,6 +13,7 @@ class ForceDomainMiddleware(object):
             return
 
         domain = getattr(settings, 'FORCE_DOMAIN', None)
+        domain = 'www.feincms.org'
 
         if not domain:
             return
