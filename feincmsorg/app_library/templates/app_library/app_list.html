@@ -5,7 +5,7 @@
         {% for app in paged.object_list %}
         <li class="app">
             <div class="clearfix">
-            
+
                 <div class="app-icon left">
                 	<div class="iconstyle">
                 		{% if app.icon %}
@@ -29,6 +29,6 @@
         {% endfor %}
     </ul>
     {% if is_paginated %}{% load paginator %}{% paginator 3 %}{% endif %}
-    <p class="indent"><a class="submitlink" href="{% app_reverse 'app_library_submit' 'feincmsorg.app_library.urls' %}">Submit your own app</a>
+    <p class="cf indent"><a class="button submitlink" href="{% app_reverse 'app_library_submit' 'feincmsorg.app_library.urls' %}">Submit your own app</a></p>
 </div>
 </section>
