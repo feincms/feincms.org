@@ -1,4 +1,4 @@
 django-registration
 south
 django-social-auth
-feincms==1.5.3
+feincms==1.5.4

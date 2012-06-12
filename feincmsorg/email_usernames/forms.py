@@ -18,7 +18,7 @@ class EmailRegistrationForm(RegistrationFormUniqueEmail):
     def clean(self):
         # Note: if the username column has not been altered to allow 75 chars, this will not
         #       work for some long email addresses.
-        self.cleaned_data['username'] = self.cleaned_data['email']
+        self.cleaned_data['username'] = self.cleaned_data.get('email', '')
         return super(EmailRegistrationForm, self).clean()
 
 

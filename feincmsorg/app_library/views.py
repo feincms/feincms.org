@@ -10,23 +10,23 @@ PAGINATE_BY = 10
 
 def app_list(request):
     apps = AppPromo.objects.all()
-    
+
     #pagination
     paginator = Paginator(apps, PAGINATE_BY)
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
         page = 1
-    
+
     try:
         paged = paginator.page(page)
     except (EmptyPage, InvalidPage):
         paged = paginator.page(paginator.num_pages)
-    
-    
+
+
     context = {'apps': apps, 'page': page, 'paged': paged,
                'is_paginated': paginator.num_pages>1 }
-    
+
     return render(request, 'app_library/app_list.html', context)
 
 def app_category_list(request, slug):
