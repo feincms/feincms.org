@@ -105,7 +105,7 @@
 
 <a title="FEINHEIT Grafik Zürich" id="byfeinheit" href="http://www.feinheit.ch/">FEINHEIT Grafik Zürich – CI/CD, Webdesign, Flash, Webshop, XHTML/CSS</a>
 
-{% if feincms_page and request.user.is_authenticated %}
+{% if feincms_page and request.user.is_staff %}
 <div id="edit-links">
     {% get_fragment request "admin-link" %}<a class="edit-link" href="/admin/page/page/{{ feincms_page.id }}/">{{ feincms_page.title }} (Edit)</a>
 </div>
