@@ -1,6 +1,7 @@
 <!doctype html> {% load applicationcontent_tags feincms_tags feincms_page_tags %}
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
+<!-- migrated -->
     <meta charset="utf-8" />
     <meta name="keywords" content="{% block meta-keywords %}{{ feincms_page.meta_keywords }} {{ block.super }}{% endblock %}" />
     <meta name="description" content="{% block meta-description %}{% if feincms_page.meta_description %}{{ feincms_page.meta_description }}{% else %}{{ block.super }}{% endif %}{% endblock %}" />

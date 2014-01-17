@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 
 urlpatterns = patterns('feincmsorg.email_usernames.views',
     url(r'^login/$', 'email_login', name="email-login"), 

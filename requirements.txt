@@ -1,4 +1,10 @@
-django-registration
+Django==1.4.10
+python-memcached
+django-registration==0.8
 south
 django-social-auth
 feincms==1.5.4
+MySQL-python
+Pillow
+lxml
+BeautifulSoup
